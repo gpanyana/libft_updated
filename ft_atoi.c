@@ -1,31 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncat.c                                       :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gpanyana <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/27 17:13:26 by gpanyana          #+#    #+#             */
-/*   Updated: 2019/06/15 04:12:07 by gpanyana         ###   ########.fr       */
+/*   Created: 2019/06/24 12:43:15 by gpanyana          #+#    #+#             */
+/*   Updated: 2019/08/07 12:12:56 by gpanyana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strncat(char *s1, const char *s2, size_t n)
+int		ft_atoi(const char *str)
 {
-	size_t i;
-	size_t j;
+	unsigned long int	nbr;
+	int					sign;
 
-	i = 0;
-	while (s1[i] != '\0')
-		i++;
-	j = 0;
-	while (j < n && s2[j] != '\0')
-	{
-		s1[i + j] = s2[j];
-		j++;
-	}
-	s1[i + j] = '\0';
-	return (s1);
+	nbr = 0;
+	sign = 1;
+	while (ft_isspace(*str) && *str)
+		str++;
+	if (*str == '-' || *str == '+')
+		if (*str++ == '-')
+			sign = -1;
+	while (ft_isdigit(*str))
+		nbr = nbr * 10 + (*str++ - 48);
+	if (nbr > 9223372036854775807)
+		return (sign > 0 ? -1 : 0);
+	return (nbr * sign);
 }

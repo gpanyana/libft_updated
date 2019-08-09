@@ -1,31 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncat.c                                       :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gpanyana <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/27 17:13:26 by gpanyana          #+#    #+#             */
-/*   Updated: 2019/06/15 04:12:07 by gpanyana         ###   ########.fr       */
+/*   Created: 2019/06/10 15:45:13 by gpanyana          #+#    #+#             */
+/*   Updated: 2019/06/24 12:10:18 by gpanyana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strncat(char *s1, const char *s2, size_t n)
+void	*ft_memset(void *b, int c, size_t len)
 {
-	size_t i;
-	size_t j;
+	size_t			i;
+	unsigned char	value;
+	unsigned char	*beta;
 
 	i = 0;
-	while (s1[i] != '\0')
-		i++;
-	j = 0;
-	while (j < n && s2[j] != '\0')
+	value = c;
+	beta = b;
+	while (i < len)
 	{
-		s1[i + j] = s2[j];
-		j++;
+		beta[i++] = value;
 	}
-	s1[i + j] = '\0';
-	return (s1);
+	return (b);
 }

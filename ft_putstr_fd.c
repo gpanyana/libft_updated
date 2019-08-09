@@ -17,6 +17,8 @@ void	ft_putstr_fd(const char *s, int fd)
 	size_t i;
 
 	i = -1;
+	if (!(s))
+		return ;
 	while (s[++i])
 		ft_putchar_fd(s[i], fd);
 }

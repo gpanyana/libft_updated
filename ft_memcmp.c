@@ -1,31 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncat.c                                       :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gpanyana <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/27 17:13:26 by gpanyana          #+#    #+#             */
-/*   Updated: 2019/06/15 04:12:07 by gpanyana         ###   ########.fr       */
+/*   Created: 2019/06/13 12:59:14 by gpanyana          #+#    #+#             */
+/*   Updated: 2019/06/25 18:43:22 by gpanyana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strncat(char *s1, const char *s2, size_t n)
+int		ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	size_t i;
-	size_t j;
+	size_t			i;
+	unsigned char	*str1;
+	unsigned char	*str2;
 
+	if (n == 0)
+		return (0);
+	str1 = (unsigned char *)s1;
+	str2 = (unsigned char *)s2;
 	i = 0;
-	while (s1[i] != '\0')
-		i++;
-	j = 0;
-	while (j < n && s2[j] != '\0')
+	if (str1 == '\0' && str2 == '\0')
+		return (0);
+	while (i < n)
 	{
-		s1[i + j] = s2[j];
-		j++;
+		if (str1[i] != str2[i])
+			return (str1[i] - str2[i]);
+		i++;
 	}
-	s1[i + j] = '\0';
-	return (s1);
+	return (0);
 }

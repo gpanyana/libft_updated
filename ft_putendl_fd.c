@@ -6,7 +6,7 @@
 /*   By: gpanyana <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/06 17:47:29 by gpanyana          #+#    #+#             */
-/*   Updated: 2019/06/06 17:50:28 by gpanyana         ###   ########.fr       */
+/*   Updated: 2019/06/10 12:08:03 by gpanyana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,6 @@
 
 void	ft_putendl_fd(const char *s, int fd)
 {
-	if (fd >= 0 && fd <= 2)
-	{
-		ft_putstr_fd(s, fd);
-		write(fd, "\n", 1);
-	}
+	ft_putstr_fd(s, fd);
+	write(fd, "\n", 1);
 }

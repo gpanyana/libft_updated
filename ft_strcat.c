@@ -6,13 +6,13 @@
 /*   By: gpanyana <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/28 15:26:05 by gpanyana          #+#    #+#             */
-/*   Updated: 2019/05/30 17:45:29 by gpanyana         ###   ########.fr       */
+/*   Updated: 2019/06/15 04:11:14 by gpanyana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strcat(char *restrict s1, const char *restrict s2)
+char	*ft_strcat(char *s1, const char *s2)
 {
 	size_t i;
 	size_t j;

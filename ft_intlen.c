@@ -1,31 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncat.c                                       :+:      :+:    :+:   */
+/*   ft_intlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gpanyana <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/27 17:13:26 by gpanyana          #+#    #+#             */
-/*   Updated: 2019/06/15 04:12:07 by gpanyana         ###   ########.fr       */
+/*   Created: 2019/06/25 10:29:03 by gpanyana          #+#    #+#             */
+/*   Updated: 2019/06/25 16:02:42 by gpanyana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strncat(char *s1, const char *s2, size_t n)
+size_t		ft_intlen(int n)
 {
-	size_t i;
-	size_t j;
+	size_t	len;
 
-	i = 0;
-	while (s1[i] != '\0')
-		i++;
-	j = 0;
-	while (j < n && s2[j] != '\0')
+	if (n == 0)
+		return (1);
+	len = 0;
+	if (n < 0)
+		len++;
+	while (n)
 	{
-		s1[i + j] = s2[j];
-		j++;
+		n /= 10;
+		len++;
 	}
-	s1[i + j] = '\0';
-	return (s1);
+	return (len);
 }

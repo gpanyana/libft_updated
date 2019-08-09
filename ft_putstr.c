@@ -17,6 +17,8 @@ void	ft_putstr(char *s)
 	size_t	i;
 
 	i = -1;
+	if (!(s))
+		return ;
 	while (s[++i])
 		ft_putchar(s[i]);
 }

@@ -1,31 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncat.c                                       :+:      :+:    :+:   */
+/*   ft_wordcount.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gpanyana <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/27 17:13:26 by gpanyana          #+#    #+#             */
-/*   Updated: 2019/06/15 04:12:07 by gpanyana         ###   ########.fr       */
+/*   Created: 2019/06/25 15:50:11 by gpanyana          #+#    #+#             */
+/*   Updated: 2019/06/25 17:15:49 by gpanyana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strncat(char *s1, const char *s2, size_t n)
+size_t		ft_wordcount(const char *s, char c)
 {
-	size_t i;
-	size_t j;
+	size_t			wc;
+	unsigned int	i;
 
+	wc = 0;
 	i = 0;
-	while (s1[i] != '\0')
-		i++;
-	j = 0;
-	while (j < n && s2[j] != '\0')
+	while (s[i])
 	{
-		s1[i + j] = s2[j];
-		j++;
+		if (s[i] != c)
+			wc++;
+		while (s[i] != c && s[i + 1])
+		{
+			i++;
+		}
+		i++;
 	}
-	s1[i + j] = '\0';
-	return (s1);
+	return (wc);
 }
