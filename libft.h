@@ -6,12 +6,13 @@
 /*   By: gpanyana <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/03 15:30:24 by gpanyana          #+#    #+#             */
-/*   Updated: 2019/08/09 19:31:58 by gpanyana         ###   ########.fr       */
+/*   Updated: 2019/08/12 11:28:56 by gpanyana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
+# define BUFF_SIZE (42)
 # include <unistd.h>
 # include <ctype.h>
 # include <stdlib.h>
@@ -82,6 +83,8 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(const char *s, int fd);
 void	ft_putendl_fd(const char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
+
+int		get_next_line(const int fd, char **line);
 
 t_list	*ft_lstnew(void const *content, size_t content_size);
 #endif
