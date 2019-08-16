@@ -6,7 +6,7 @@
 /*   By: gpanyana <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/03 15:30:24 by gpanyana          #+#    #+#             */
-/*   Updated: 2019/08/12 11:28:56 by gpanyana         ###   ########.fr       */
+/*   Updated: 2019/08/17 00:59:57 by gpanyana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,4 +87,9 @@ void	ft_putnbr_fd(int n, int fd);
 int		get_next_line(const int fd, char **line);
 
 t_list	*ft_lstnew(void const *content, size_t content_size);
+void	ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
+void	ft_lstdel(t_list **alst, void (*del)(void *, size_t));
+void	ft_lstadd(t_list **alst, t_list *new);
+void	ft_lstiter(t_list *list, void (*f)(t_list *elem));
+t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 #endif
