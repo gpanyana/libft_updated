@@ -24,12 +24,15 @@ $(NAME): $(OBJ)
 	ar rc $(NAME) $(OBJ)
 
 $(OBJ): $(SRC)
-	gcc $(FLAGS) $(SRC)
+	@gcc $(FLAGS) $(SRC)
+	@echo "compliling .o files"
 
 clean:
-	rm -rf $(OBJ)
+	@rm -rf $(OBJ)
+	@echo "deleting .o"
 
 fclean: clean
-	rm -rf $(NAME)
+	@rm -rf $(NAME)
+	@echo "deleting libft.a"
 
 re: fclean all
